@@ -14,7 +14,7 @@ Light, fast and resourceful. The perfect companion for the urban hotel owner.
 * SQLite 3
 
 ### Created by:
-CS Jheyanth
-A Abhishek
-P Pazhaniyappan
-Nikhil Mishra
+CS Jheyanth  
+A Abhishek  
+P Pazhaniyappan  
+Nikhil Mishra  
