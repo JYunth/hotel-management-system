@@ -80,3 +80,9 @@ def check_out_ui():
     root = Tk()
     application = CheckOut(root)
     root.mainloop()
+
+# Created by:
+# CS Jheyanth
+# A Abhishek
+# P Pazhaniyappan
+# Nikhil Mishra

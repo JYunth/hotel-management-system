@@ -75,7 +75,7 @@ class CheckIN:
         
         #Declaration of the rooms in the hotel
         roomnumber = [101, 102, 103, 104, 105, 106, 107, 108, 109, 110]
-        self.room_number_var = 0
+        self.room_number_var = random.choice(roomnumber)
 
         self.room_entry = Entry(self.bottom, width=50)
         self.room_entry.insert(INSERT, self.room_number_var)

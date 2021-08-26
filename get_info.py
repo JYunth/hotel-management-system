@@ -80,8 +80,8 @@ def get_info_ui():
     application = GetInfo(root)
     root.mainloop()
         
-
-        
-
-
-
+# Created by:
+# CS Jheyanth
+# A Abhishek
+# P Pazhaniyappan
+# Nikhil Mishra

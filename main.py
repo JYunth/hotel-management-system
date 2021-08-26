@@ -3,6 +3,7 @@ import check_in_ui
 import check_out
 import get_info
 import customer_info
+import about
 import os
 
 
@@ -45,6 +46,10 @@ class Hotel:
         self.exit_button = Button(bottom, text="Exit", font=('Bookman Old Style', 20), bg="#000000", relief=RIDGE, height=1, width=30, fg="white", anchor="center", command=quit)
         self.exit_button.grid(row=4, column=2, padx=10, pady=10)
 
+        # button to view the about page
+        self.about_button = Button(bottom, text = 'about', font = ('Bookman Old Style', 15), bg = '#450000', relief=RIDGE, height=1, width=30, fg="white", anchor="center", command=about.about_ui)
+        self.about_button.grid(row = 5, column = 2, padx = 10, pady = 10)
+
 
 def home_ui():
     root = Tk()
@@ -54,20 +59,9 @@ def home_ui():
 
 if __name__ == '__main__':
     home_ui()                                      
-        
-                                         
-                                         
-                                      
-                                        
-        
 
-        
-
-        
-
-        
-
-        
-
-
-
+# Created by:
+# CS Jheyanth
+# A Abhishek
+# P Pazhaniyappan
+# Nikhil Mishra
