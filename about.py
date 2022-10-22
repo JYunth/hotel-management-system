@@ -61,7 +61,7 @@ class About:
         self.nikhil.grid(row = 9, column = 1)
 
         # back to home page
-        self.back_home_button = Button(self.info_frame, text="Home", font=('Bookman Old Style', 15), bg="#330000", relief=RIDGE, height=2, width=15, fg="white", anchor="center", command=main.home_ui)                               
+        self.back_home_button = Button(self.info_frame, text="Home", font=('Bookman Old Style', 15), bg="#330000", relief=RIDGE, height=2, width=15, fg="white", anchor="center", command=self.root.destroy)                               
         self.back_home_button.grid(row=10, column=0, padx=10, pady=10, columnspan = 2)
 
 

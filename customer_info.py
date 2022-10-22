@@ -72,7 +72,7 @@ class CustomerInfo:
 
 
         # create display button
-        self.display_button = Button(top, text="Display Results", font=('Bookman Old Style', 15), bg="#330000", relief=RIDGE, height=2, width=15, fg="white", anchor="center", command=display_info)
+        self.display_button = Button(top, text="Display Results", font=('Bookman Old Style', 15), bg="#330000", relief=RIDGE, height=2, width=15, fg="white", anchor="center", command=self.root.destroy)
         self.display_button.grid(row=1, column=1, padx=10, pady=10)                             
         
         

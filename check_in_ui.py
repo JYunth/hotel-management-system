@@ -97,7 +97,7 @@ class CheckIN:
                     break
                 else:
                     ans = False
-                    messagebox.showerror("ERROR", "The number you entered is either not valid or does not have 10 digits.")
+                    messagebox.showerror("ERROR", "The number you entered is either not valid or does not have 10 digits.",parent=self.root)
                     break
 
             while True:
@@ -108,7 +108,7 @@ class CheckIN:
                     break
                 else:
                     ans1 = False
-                    messagebox.showerror("ERROR", "Number of days to stay cannot be a letter.")
+                    messagebox.showerror("ERROR", "Number of days to stay cannot be a letter.",parent=self.root)
                     break
 
             if ans == TRUE and ans1 == True:
@@ -158,7 +158,7 @@ class CheckIN:
                                     
         
         # back to home page
-        self.back_home_button = Button(self.checkbox, text="Home", font=('Bookman Old Style', 15), bg="#330000", relief=RIDGE, height=2, width=15, fg="white", anchor="center", command=main.home_ui)                               
+        self.back_home_button = Button(self.checkbox, text="Home", font=('Bookman Old Style', 15), bg="#330000", relief=RIDGE, height=2, width=15, fg="white", anchor="center", command=self.root.destroy)                               
         self.back_home_button.grid(row=5, column=2, padx=10, pady=10)
 
         #Da Reset button
