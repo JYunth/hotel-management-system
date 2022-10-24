@@ -72,7 +72,7 @@ class CheckOut:
         self.check_out_button.grid(row=3, column=2, padx=10, pady=(10, 20))                               
                                        
         # create home button
-        self.home_button = Button(bottom, text="Home", font=('Bookman Old Style', 15), bg="#330000", relief=RIDGE, height=2, width=15, fg="white", anchor="center", command=main.home_ui)
+        self.home_button = Button(bottom, text="Home", font=('Bookman Old Style', 15), bg="#330000", relief=RIDGE, height=2, width=15, fg="white", anchor="center", command=self.root.destroy)
         self.home_button.grid(row=3, column=3, padx=10, pady=(10, 20))                          
         
 
