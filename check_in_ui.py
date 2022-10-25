@@ -97,7 +97,7 @@ class CheckIN:
                     break
                 else:
                     ans = False
-                    messagebox.showerror("ERROR", "The number you entered is either not valid or does not have 10 digits.",parent=self.root)
+                    messagebox.showerror("ERROR", "The mobile number you entered is either not valid or does not have 10 digits.",parent=self.root)
                     break
 
             while True:
