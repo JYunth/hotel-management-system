@@ -14,6 +14,7 @@ class CheckIN:
         self.root = root
         pad = 3
         self.root.title("Check into OceanView!")
+        self.root.iconbitmap("hms.ico")
         self.root.geometry("{0}x{1}+0+0".format(self.root.winfo_screenwidth() - pad, self.root.winfo_screenheight() - pad))
             
 

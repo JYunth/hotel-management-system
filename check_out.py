@@ -8,6 +8,7 @@ class CheckOut:
         self.root = root
         pad = 3
         self.root.title("Check out of OceanView")
+        self.root.iconbitmap("hms.ico")
         self.root.geometry("{0}x{1}+0+0".format(self.root.winfo_screenwidth() - pad, self.root.winfo_screenheight() - pad))
 
         # create mainframe to add message
