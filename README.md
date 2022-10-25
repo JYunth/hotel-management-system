@@ -11,16 +11,15 @@ Occupants name, address, mobile number, number of days they will occupy room for
 
 Hotel management system will keep track check-ins and check-outs from your hotel, which gives you an overview of all your occupants, what is the room they occupy and their details and all that is just one click away. The program is light, fast and resourceful. The perfect companion for the urban hotel owner.
 
-
 ## System requirements:  
 * Python 3
 * SQLite 3
 
 ## Project created by:
-CS Jheyanth  
-A Abhishek  
-P Pazhaniyappan  
-Nikhil Mishra
+* CS Jheyanth  
+* A Abhishek  
+* P Pazhaniyappan  
+* Nikhil Mishra
 
 ## How can I contribute to the project
 Contribution guideline for this project can be found [here!](/CONTRIBUTE.md)
