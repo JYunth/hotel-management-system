@@ -31,7 +31,7 @@ class CheckOut:
         
         # text entry field for room number
         self.room_var = IntVar()
-        self.room_no_entry = Entry(bottom, width=5, text=self.room_var)
+        self.room_no_entry = Entry(bottom, width=5, text=self.room_var, font="14")
         self.room_no_entry.grid(row=2, column=3, padx=10, pady=(70, 10))
 
         # info window
