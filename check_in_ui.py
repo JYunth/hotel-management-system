@@ -37,7 +37,7 @@ class CheckIN:
 
         
         #text entry for name
-        self.name_entry = Entry(self.bottom, width=50, textvar=self.name_var)
+        self.name_entry = Entry(self.bottom, width=30, textvar=self.name_var, font="14")
         self.name_entry.grid(row=0, column=3, padx=10, pady= (70, 0))
 
         # address
@@ -47,7 +47,7 @@ class CheckIN:
 
         #text entry for address
         self.address_var = StringVar()
-        self.address_entry = Entry(self.bottom, width=50, textvar=self.address_var)
+        self.address_entry = Entry(self.bottom, width=30, textvar=self.address_var, font="14")
         self.address_entry.grid(row=1, column=3, padx=10, pady=10)
 
         #mobile number
@@ -56,7 +56,7 @@ class CheckIN:
         
         # text entry field for mobile number
         self.mobile_var = IntVar()
-        self.mobile_entry = Entry(self.bottom, width=50, text=self.mobile_var)
+        self.mobile_entry = Entry(self.bottom, width=30, text=self.mobile_var, font="14")
         self.mobile_entry.grid(row=2, column=3, padx=10, pady=10)
                          
         #number of days stay
@@ -65,7 +65,7 @@ class CheckIN:
                                 
         # text entry field for number of days stay
         self.days_var = IntVar()
-        self.days_entry = Entry(self.bottom, width=50, text=self.days_var)
+        self.days_entry = Entry(self.bottom, width=30, text=self.days_var, font="14")
         self.days_entry.grid(row=3, column=3, padx=10, pady=10)                         
         
         # room number label
@@ -77,7 +77,7 @@ class CheckIN:
         roomnumber = [101, 102, 103, 104, 105, 106, 107, 108, 109, 110]
         self.room_number_var = random.choice(roomnumber)
 
-        self.room_entry = Entry(self.bottom, width=50)
+        self.room_entry = Entry(self.bottom, width=30, font="14")
         self.room_entry.insert(INSERT, self.room_number_var)
         self.room_entry.grid(row=4, column=3, padx=10, pady=10)
         

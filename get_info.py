@@ -35,7 +35,7 @@ class GetInfo:
                    
         # text enter field for room number
         self.room_number = IntVar()
-        self.room_no_entry = Entry(bottom, width=5, text=self.room_number)
+        self.room_no_entry = Entry(bottom, width=5, text=self.room_number, font="14")
         self.room_no_entry.grid(row=2, column=3, padx=10, pady=10)
         
         # textinfo display field
