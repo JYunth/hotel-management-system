@@ -60,9 +60,3 @@ def home_ui():
 
 if __name__ == '__main__':
     home_ui()                                      
-
-# Created by:
-# CS Jheyanth
-# A Abhishek
-# P Pazhaniyappan
-# Nikhil Mishra
