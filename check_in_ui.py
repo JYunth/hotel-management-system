@@ -17,8 +17,7 @@ class CheckIN:
         self.root.iconbitmap("hms.ico")
         self.root.geometry("{0}x{1}+0+0".format(self.root.winfo_screenwidth() - pad, self.root.winfo_screenheight() - pad))
             
-
-        self.top = LabelFrame(self.root)
+        self.top = Frame(self.root)
         self.top.pack(side="top")
 
         self.bottom = Frame(self.root)
