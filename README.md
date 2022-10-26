@@ -15,11 +15,5 @@ Hotel management system will keep track check-ins and check-outs from your hotel
 * Python 3
 * SQLite 3
 
-## Project created by:
-* CS Jheyanth  
-* A Abhishek  
-* P Pazhaniyappan  
-* Nikhil Mishra
-
 ## How can I contribute to the project
 Contribution guideline for this project can be found [here!](/CONTRIBUTING.md)

@@ -81,9 +81,3 @@ def customer_info_ui():
     root = Tk()
     application = CustomerInfo(root)
     root.mainloop()
-
-# Created by:
-# CS Jheyanth
-# A Abhishek
-# P Pazhaniyappan
-# Nikhil Mishra

@@ -41,32 +41,6 @@ class About:
         self.desc5.grid(row = 5, column = 0, columnspan = 2, pady = (0, 10))
         self.desc6.grid(row = 6, column = 0, columnspan = 2, pady = (0, 10))
 
-        #This program was made by:
-        self.line1 = Label(self.top, font = ('Bookman Old Style', 30, 'bold'), text = "This program was made by: ", fg = '#330000', anchor = 'w')
-        self.line1.grid(row = 7, column = 0, columnspan =  2, pady = (0, 15))
-
-        #Jheyanth
-        self.jhey = Label(self.top, font = ('Bookman Old Style', 20), text = "CS Jheyanth", fg = '#330000', anchor = 'w')
-        self.jhey.grid(row = 8, column = 0, pady = (0,10))
-
-        #Abhishek A
-        self.abhi = Label(self.top, font = ('Bookman Old Style', 20,), text = "A Abhishek", fg = '#330000', anchor = 'w')
-        self.abhi.grid(row = 9, column = 0)
-
-        #P Pazhaniyappan
-        self.paz = Label(self.top, font = ('Bookman Old Style', 20), text = 'P Pazhaniyappan', fg = '#330000', anchor = 'w')
-        self.paz.grid(row = 8, column = 1, pady = (0,10))
-
-        #Nikhil Mishra
-        self.nikhil = Label(self.top, font = ('Bookman Old Style', 20), text = 'Nikhil Mishra', fg = '#330000', anchor = 'w')
-        self.nikhil.grid(row = 9, column = 1)
-
-        # back to home page
-        self.back_home_button = Button(self.info_frame, text="Home", font=('Bookman Old Style', 15), bg="#330000", relief=RIDGE, height=2, width=15, fg="white", anchor="center", command=self.root.destroy)                               
-        self.back_home_button.grid(row=10, column=0, padx=10, pady=10, columnspan = 2)
-
-
-
 def about_ui():
     root = Tk()
     application = About(root)
