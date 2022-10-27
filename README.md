@@ -16,4 +16,4 @@ Hotel management system will keep track check-ins and check-outs from your hotel
 * SQLite 3
 
 ## How can I contribute to the project
-Contribution guideline for this project can be found [here!](/CONTRIBUTE.md)
+Contribution guideline for this project can be found [here!](/CONTRIBUTING.md)
