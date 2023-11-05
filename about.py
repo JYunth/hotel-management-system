@@ -39,7 +39,7 @@ class About:
         self.desc6.grid(row=6, column=0, columnspan=2, pady=(0, 10))
 
         # Create a "Home" button
-        self.home_button = Button(self.bottom, text="Home", font=('Bookman Old Style', 20), bg="#330000", relief=RIDGE, width=10, height=2, fg="white", command=self.go_to_home)
+        self.home_button = Button(self.bottom, text="Home", font=('Bookman Old Style', 20), bg="#330000", relief=RIDGE, width=15, height=3, fg="white", command=self.go_to_home)
         self.home_button.grid(row=0, column=0, padx=10, pady=10)
 
     def go_to_home(self):
