@@ -2,7 +2,6 @@ import sqlite3
 from tkinter import *
 import main
 
-
 class CustomerInfo:
     def __init__(self, root):
         self.root = root
@@ -10,7 +9,6 @@ class CustomerInfo:
         self.root.title("Customer Info")
         self.root.iconbitmap("hms.ico")
         self.root.geometry("{0}x{1}+0+0".format(self.root.winfo_screenwidth() - pad, self.root.winfo_screenheight() - pad))
-            
 
         # create mainframe to add message
         top = Frame(self.root)
@@ -29,7 +27,7 @@ class CustomerInfo:
         self.label = Label(top, font=('Bookman Old Style', 50, 'bold'), text="Customer List", fg="#330000", anchor="center")
         self.label.grid(row=0, column=0, padx=10, pady=(10, 70), columnspan=2)
 
-        #name
+        # name
         self.name_label = Label(left, font=('Bookman Old Style', 20, 'bold'), text="Names of Occupants:", fg="#330000", anchor="center")
         self.name_label.grid(row=1, column=0, padx=10, pady=10)
 
@@ -37,7 +35,7 @@ class CustomerInfo:
         self.name_customer_entry = Text(left, height=30, width=70)
         self.name_customer_entry.grid(row=2, column=0, padx=10, pady=10)
 
-        #room number
+        # room number
         self.room_no_label = Label(right, font=('Bookman Old Style', 20, 'bold'), text="Room Number of occupant:", fg="#330000", anchor="center")
         self.room_no_label.grid(row=1, column=1, padx=10, pady=10)
 
@@ -47,37 +45,36 @@ class CustomerInfo:
 
         # create home button
         self.home_button = Button(top, text="Home", font=('Bookman Old Style', 15), bg="#330000", relief=RIDGE, height=2, width=15, fg="white", anchor="center", command=main.home_ui)
-        self.home_button.grid(row=1, column=0, padx=10, pady=10)                          
-        
-
-        def display_info():
-
-            conn = sqlite3.connect('Hotel.db')
-            with conn:
-                cursor = conn.cursor()
-            cursor.execute(
-                'CREATE TABLE IF NOT EXISTS Hotel (Fullname TEXT,Address TEXT,mobile_number TEXT,number_days TEXT,'
-                'room_number NUMBER)')
-            conn.commit()
-            with conn:
-                cursor.execute("SELECT Fullname FROM Hotel")
-                ans = cursor.fetchall()
-                for i in ans:
-                    self.name_customer_entry.insert(INSERT, i[0] + '\n')
-
-            with conn:
-                cursor.execute("SELECT room_number FROM Hotel")
-                ans = cursor.fetchall()
-                for i in ans:
-                    self.room_no_customer_entry.insert(INSERT, str(i[0]) + '\n')
-
+        self.home_button.grid(row=1, column=0, padx=10, pady=10)
 
         # create display button
-        self.display_button = Button(top, text="Display Results", font=('Bookman Old Style', 15), bg="#330000", relief=RIDGE, height=2, width=15, fg="white", anchor="center", command=self.root.destroy)
-        self.display_button.grid(row=1, column=1, padx=10, pady=10)                             
-        
-        
+        self.display_button = Button(top, text="Display Results", font=('Bookman Old Style', 15), bg="#330000", relief=RIDGE, height=2, width=15, fg="white", anchor="center", command=self.display_info)
+        self.display_button.grid(row=1, column=1, padx=10, pady=10)
+
+    def display_info(self):
+        conn = sqlite3.connect('Hotel.db')
+        with conn:
+            cursor = conn.cursor()
+        cursor.execute('CREATE TABLE IF NOT EXISTS Hotel (Fullname TEXT, Address TEXT, mobile_number TEXT, number_days TEXT, room_number NUMBER)')
+        conn.commit()
+        with conn:
+            cursor.execute("SELECT Fullname FROM Hotel")
+            ans = cursor.fetchall()
+            self.name_customer_entry.delete(1.0, END)  # Clear previous text
+            for i in ans:
+                self.name_customer_entry.insert(INSERT, i[0] + '\n')
+
+        with conn:
+            cursor.execute("SELECT room_number FROM Hotel")
+            ans = cursor.fetchall()
+            self.room_no_customer_entry.delete(1.0, END)  # Clear previous text
+            for i in ans:
+                self.room_no_customer_entry.insert(INSERT, str(i[0]) + '\n')
+
 def customer_info_ui():
     root = Tk()
     application = CustomerInfo(root)
     root.mainloop()
+
+if __name__ == '__main__':
+    customer_info_ui()

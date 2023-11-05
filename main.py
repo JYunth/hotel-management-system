@@ -6,57 +6,54 @@ import customer_info
 import about
 import os
 
-
 class Hotel:
     def __init__(self, root):
         self.root = root
-        pad = 3
-        self.root.title("Hotel Management System: OceanView")
+        self.root.overrideredirect(True)  # Remove window decorations (title bar, borders)
+        self.root.attributes("-alpha", 1.0)  # Set window transparency to 1.0 (fully opaque)
         self.root.iconbitmap("hms.ico")
-        self.root.geometry("{0}x{1}+0+0".format(self.root.winfo_screenwidth() - pad, self.root.winfo_screenheight() - pad))
-            
-        # create mainframe to add message
-        top = Frame(self.root)
-        top.pack(side="top")
+        self.root.geometry("{0}x{1}+0+0".format(self.root.winfo_screenwidth(), self.root.winfo_screenheight()))
+
         
-        # create frame to add buttons
-        bottom = Frame(self.root)
-        bottom.pack(side="top")
+        # Create a main frame to add a welcome message
+        top = Frame(self.root)
+        top.pack(side="top", pady=30)
 
-        # display message
-        self.label = Label(top, font=('Bookman Old Style', 50, 'bold'), text="Welcome to OceanView!", fg="#330000", anchor="center")
-        self.label.grid(row=0, column=3, pady = (0, 30))
+        # Create a frame to add buttons
+        bottom = Frame(self.root, bg="white")
+        bottom.pack(side="top", pady=20)
 
-        # create check in button
-        self.check_in_button = Button(bottom, text="Check In", font=('Bookman Old Style', 20), bg="#330000", relief=RIDGE, height=2, width=50, fg="white", anchor="center", command=check_in_ui.check_in_ui_fun)
-        self.check_in_button.grid(row=0, column=2, padx=10, pady=10)                              
+        # Display a welcome message
+        self.label = Label(top, font=('Bookman Old Style', 50, 'bold'), text="Welcome to OceanView!", fg="#330000", anchor="center", bg="white")
+        self.label.grid(row=0, column=0, columnspan=6)  # Set columnspan to match the number of buttons
 
-        # create check out button
-        self.check_out_button = Button(bottom, text="Check Out", font=('Bookman Old Style', 20), bg="#330000", relief=RIDGE, height=2, width=50, fg="white", anchor="center", command=check_out.check_out_ui)
-        self.check_out_button.grid(row=1, column=2, padx=10, pady=10)                                
+        # Create buttons and customize their appearance with larger size
+        button_size = (20, 3)  # Button size (width, height)
+        button_font_size = 16
+        buttons = [
+            {"text": "Check In", "command": check_in_ui.check_in_ui_fun},
+            {"text": "Check Out", "command": check_out.check_out_ui},
+            {"text": "Customer Room Info", "command": get_info.get_info_ui},
+            {"text": "All Occupants Info", "command": customer_info.customer_info_ui},
+            {"text": "Exit", "command": quit},
+            {"text": "About", "command": about.about_ui}
+        ]
 
-        # create show list button
-        self.room_info_button = Button(bottom, text="Customer Room Info", font=('Bookman Old Style', 20), bg="#330000", relief=RIDGE, height=2, width=50, fg="white", anchor="center", command=get_info.get_info_ui)
-        self.room_info_button.grid(row=2, column=2, padx=10, pady=10)                              
-                                       
-        # create get information of all the guest
-        self.get_info_button = Button(bottom, text="All Occupants Info", font=('Bookman Old Style', 20), bg="#330000", relief=RIDGE, height=2, width=50, fg="white", anchor="center", command=customer_info.customer_info_ui)
-        self.get_info_button.grid(row=3, column=2, padx=10, pady=10)                              
-                                      
-        # button to exit the program
-        self.exit_button = Button(bottom, text="Exit", font=('Bookman Old Style', 20), bg="#000000", relief=RIDGE, height=1, width=30, fg="white", anchor="center", command=quit)
-        self.exit_button.grid(row=4, column=2, padx=10, pady=10)
+        for i, button_info in enumerate(buttons):
+            button = Button(bottom, text=button_info["text"], font=('Bookman Old Style', button_font_size), bg="#330000", relief=RIDGE, width=button_size[0], height=button_size[1], fg="white", anchor="center", command=button_info["command"])
+            button.grid(row=0, column=i, padx=10, pady=10, sticky='nsew')
 
-        # button to view the about page
-        self.about_button = Button(bottom, text = 'about', font = ('Bookman Old Style', 15), bg = '#450000', relief=RIDGE, height=1, width=30, fg="white", anchor="center", command=about.about_ui)
-        self.about_button.grid(row = 5, column = 2, padx = 10, pady = 10)
+        # Ensure that buttons expand within their grid cell to fill the cell properly
+        bottom.grid_rowconfigure(0, weight=1)  
+        for i in range(6):
+            bottom.grid_columnconfigure(i, weight=1)  # Ensure buttons expand in the x-axis
 
+    
 
 def home_ui():
     root = Tk()
     application = Hotel(root)
     root.mainloop()
 
-
 if __name__ == '__main__':
-    home_ui()                                      
+    home_ui()                                
